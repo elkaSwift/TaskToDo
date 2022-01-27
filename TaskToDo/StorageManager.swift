@@ -5,8 +5,6 @@
 //  Created by Елисей Мищенко on 27.01.2022.
 //
 
-import Foundation
-
 import CoreData
 
 class StorageManager {
@@ -46,14 +44,14 @@ class StorageManager {
     //Сохранение данных
     func save(_ taskName: String, completion: (Task) -> Void) {
         let task = Task(context: viewContext)
-        task.title = taskName
+        task.name = taskName
         completion(task)
         saveContext()
     }
     
     //Редактирование
     func edit(_ task: Task, newName: String) {
-        task.title = newName
+        task.name = newName
         saveContext()
     }
     
